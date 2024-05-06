@@ -9,6 +9,7 @@ from argparse import ArgumentParser
 
 """ =========== *Remember to import your agent!!! =========== """
 from randomplayer import RandomPlayer
+from MCTSPlayer import MCTSPlayer
 # from smartwarrior import SmartWarrior
 """ ========================================================= """
 
@@ -22,12 +23,12 @@ def testperf(agent_name1, agent1, agent_name2, agent2):
 	# Init to play 500 games of 1000 rounds
 	num_game = 500
 	max_round = 1000
-	initial_stack = 10000
+	initial_stack = 1000
 	smallblind_amount = 20
 
 	# Init pot of players
-	agent1_pot = 0
-	agent2_pot = 0
+	agent1_pot = 1000
+	agent2_pot = 1000
 
 	# Setting configuration
 	config = setup_config(max_round=max_round, initial_stack=initial_stack, small_blind_amount=smallblind_amount)
