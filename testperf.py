@@ -9,7 +9,7 @@ from argparse import ArgumentParser
 
 """ =========== *Remember to import your agent!!! =========== """
 from randomplayer import RandomPlayer
-from MCTSPlayer import MCTSPlayer
+from MCTSPlayer import MCTSPokerPlayer
 # from smartwarrior import SmartWarrior
 """ ========================================================= """
 
@@ -35,7 +35,7 @@ def testperf(agent_name1, agent1, agent_name2, agent2):
 	
 	# Register players
 	config.register_player(name=agent_name1, algorithm=RandomPlayer())
-	config.register_player(name=agent_name2, algorithm=RandomPlayer())
+	config.register_player(name=agent_name2, algorithm=MCTSPokerPlayer())
 	# config.register_player(name=agent_name1, algorithm=agent1())
 	# config.register_player(name=agent_name2, algorithm=agent2())
 	
@@ -62,7 +62,7 @@ def testperf(agent_name1, agent1, agent_name2, agent2):
 		print("\n Congratulations! " + agent_name1 + " has won.")
 		# print("\n Random Player has won!")
 	else:
-		Print("\n It's a draw!") 
+		print("\n It's a draw!") 
 
 
 def parse_arguments():
